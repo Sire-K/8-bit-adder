@@ -6,14 +6,14 @@ def logic(A, B, C):
     if C == True:                                    #Sets C as False
         C = False
     add = (A ^ B)                                    #XOR GATE: A XOR B
-    C = (A * B)                                      #AND GATE: A AND B            
+    carry = (A * B)                                      #AND GATE: A AND B            
 
-    add, C = bool_operation(add, C)
+    add_var, carry_var = bool_operation(add, carry)
 
-def bool_operation(add, C):
-    add = bool(add)                                  #Sets add as True if 1 and False if 0
-    C = bool(C)
-    return add, C                                    #Sets C as True if 1 and False if 0
+def bool_operation(add, carry):
+    add_variable = bool(add)                                  #Sets add as True if 1 and False if 0
+    carry_variable = bool(carry)
+    return add_variable, carry_variable                                    #Sets C as True if 1 and False if 0
 
 if __name__ == "__main__":
     A, B, C = assignment()
