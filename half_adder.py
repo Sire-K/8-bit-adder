@@ -9,6 +9,7 @@ def logic(A, B, C):
     carry = (A * B)                                      #AND GATE: A AND B            
 
     add_var, carry_var = bool_operation(add, carry)
+    print(f"Add: {add_var}, Carry: {carry_var}")
 
 def bool_operation(add, carry):
     add_variable = bool(add)                                  #Sets add as True if 1 and False if 0
