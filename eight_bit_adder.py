@@ -60,38 +60,45 @@ class adder_Operation:
         return sum_var_seven, carry_var_seven
     
 if __name__ == "__main__":
+    sum = 0
     adder = adder_Operation()
     carry_var_zero = None
     for i in range(8):
         if i == 0:
             A, B, C = assignment()  
             sum_var_zero, carry_var_zero = adder.first(A, B, C) 
-            print(f"Sum[{i}]: {sum_var_zero}, Carry[{i}]: {carry_var_zero}")
+            sum = (sum * 10) + int(sum_var_zero)
         elif i == 1:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_one, carry_var_one = adder.second(A, B, carry_var_zero)      #Instead of C, carry_var_zero is used.
-            print(f"Sum[{i}]: {sum_var_one}, Carry[{i}]: {carry_var_one}")
+            sum = (sum * 10) + int(sum_var_one)
         elif i == 2:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_two, carry_var_two = adder.third(A, B, carry_var_one)        #Instead of C, carry_var_one is used.
-            print(f"Sum[{i}]: {sum_var_two}, Carry[{i}]: {carry_var_two}")
+            sum = (sum * 10) + int(sum_var_two)
         elif i == 3:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_three, carry_var_three = adder.fourth(A, B, carry_var_two)   #Instead of C, carry_var_two is used.
-            print(f"Sum[{i}]: {sum_var_three}, Carry[{i}]: {carry_var_three}")
+            sum = (sum * 10) + int(sum_var_three)
         elif i == 4:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_four, carry_var_four = adder.fifth(A, B, carry_var_three)    #Instead of C, carry_var_three is used.
-            print(f"Sum[{i}]: {sum_var_four}, Carry[{i}]: {carry_var_four}")
+            sum = (sum * 10) + int(sum_var_four)
         elif i == 5:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_five, carry_var_five = adder.sixth(A, B, carry_var_four)     #Instead of C, carry_var_four is used.
-            print(f"Sum[{i}]: {sum_var_five}, Carry[{i}]: {carry_var_five}")
+            sum = (sum * 10) + int(sum_var_five)
         elif i == 6:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_six, carry_var_six = adder.seventh(A, B, carry_var_five)     #Instead of C, carry_var_five is used.
-            print(f"Sum[{i}]: {sum_var_six}, Carry[{i}]: {carry_var_six}")
+            sum = (sum * 10) + int(sum_var_six)
         elif i == 7:
             A, B, C = assignment()                                               #The program doesn't considers C here.
             sum_var_seven, carry_var_seven = adder.eighth(A, B, carry_var_six)   #Instead of C, carry_var_six is used.
-            print(f"Sum[{i}]: {sum_var_seven}, Carry[{i}]: {carry_var_seven}")
+            sum = (sum * 10) + int(sum_var_seven)
+
+    decimal_equivalent = int(str(sum), 2)
+    final_carry = int(carry_var_seven)
+    print(f"Sum: {sum}")
+    print(f"Sum(decimal): {decimal_equivalent}")
+    print(f"Final Carry: {final_carry}")
