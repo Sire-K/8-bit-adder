@@ -62,14 +62,14 @@ class adder_Operation:
     
 if __name__ == "__main__":
     sum = 0
+    n = 1
     adder = adder_Operation()
     carry_var_zero = None
     for i in range(8):
-        n = 1
         if i == 0:
             A, B, C = assignment()  
             sum_var_zero, carry_var_zero = adder.first(A, B, C) 
-            sum = int(sum_var_zero)
+            sum = int(sum_var_zero) * n
         elif i == 1:
             A, B, C = t_assignment(carry_var_zero)                                               
             sum_var_one, carry_var_one = adder.second(A, B, carry_var_zero)      
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             sum_var_seven, carry_var_seven = adder.eighth(A, B, carry_var_six)   
             sum = sum + (int(sum_var_seven) * n)
         
-        n *= 10
+        n = n * 10
 
     decimal_equivalent = int(str(sum), 2)
     final_carry = int(carry_var_seven)
