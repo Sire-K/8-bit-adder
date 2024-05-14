@@ -53,5 +53,3 @@ def t_assignment(C):
     A, B, Carry = inputs_to_bool(A, B, Carry)
     return A, B, Carry
 
-if __name__ == "__main__":
-    assignment()
