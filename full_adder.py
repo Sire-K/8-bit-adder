@@ -13,7 +13,3 @@ def bool_operation(out_one, out_two):
     out_one = bool(out_one)                         #Sets add as True if 1 and False if 0
     out_two = bool(out_two)                         #Sets C as True if 1 and False if 0
     return out_one, out_two
-
-if __name__ == "__main__":
-    A, B, C = assignment()
-    operation(A, B, C)
