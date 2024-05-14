@@ -1,4 +1,4 @@
-#Rs. 4500
+#Rs. 4500 [$33.66], Total price to make this adder component.                                 
 
 from full_adder import operation, bool_operation
 from inputs import assignment, t_assignment
