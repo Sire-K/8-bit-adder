@@ -16,7 +16,3 @@ def bool_operation(add, carry):
     carry_variable = bool(carry)
     return add_variable, carry_variable                                    #Sets C as True if 1 and False if 0
 
-if __name__ == "__main__":
-    A, B, C = assignment()
-    logic(A, B, C)
-
