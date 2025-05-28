@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grammar & Paraphrasing App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #222;
+    }
+    textarea {
+      width: 100%;
+      max-width: 800px;
+      padding: 0.5em;
+      font-family: inherit;
+      font-size: 1em;
+    }
+    select, button {
+      padding: 0.4em;
+      font-size: 1em;
+    }
+    mark {
+      background-color: #fffa65;
+    }
+    .output {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 1em;
+      max-width: 800px;
+      white-space: pre-wrap;
+    }
+    .highlight span {
+      font-weight: bold;
+    }
+    .highlight .added {
+      color: green;
+    }
+    .highlight .removed {
+      color: red;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grammar & Paraphrasing App</h1>
+
+  <form method="post">
+    <label for="mode">Choose mode:</label>
+    <select id="mode" name="mode">
+      <option value="grammar" {% if mode == 'grammar' %}selected{% endif %}>Grammar Correction</option>
+      <option value="novelistic" {% if mode == 'novelistic' %}selected{% endif %}>Novelistic Paraphrase</option>
+    </select>
+
+    <br /><br />
+
+    <label for="text_input">Enter your text:</label><br />
+    <textarea id="text_input" name="text_input" rows="8" placeholder="Type or paste your text here...">{{ original_text }}</textarea>
+
+    <br /><br />
+    <button type="submit">Process Text</button>
+  </form>
+
+  {% if output_text %}
+    <h2>Output:</h2>
+    <div class="output highlight">
+      {{ highlighted_text|safe }}
+    </div>
+  {% endif %}
+</body>
+</html>
