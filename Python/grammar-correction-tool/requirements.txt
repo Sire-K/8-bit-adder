@@ -1,2 +1,3 @@
 Flask
 language_tool_python
+pip install flask openai==0.28.0 python-dotenv
