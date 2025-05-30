@@ -4,7 +4,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Load your OpenAI API key from environment variables
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def paraphrase_gpt(text: str) -> str:
@@ -17,7 +16,7 @@ def paraphrase_gpt(text: str) -> str:
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # or "gpt-4" if you have access
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant skilled in literary paraphrasing."},
                 {"role": "user", "content": prompt}
@@ -42,10 +41,8 @@ def index():
         if mode == 'novelistic':
             output = paraphrase_gpt(original)
         else:
-            # Your existing grammar correction code here
-            output = original  # placeholder
+            output = original
 
-    # Pass the same output for highlighted_text so template can show it
     return render_template(
         'index.html', 
         original_text=original, 
